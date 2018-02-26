@@ -1,6 +1,6 @@
 # Frequency Analysis of Words
 
-[TODO. There will be project description]
+The script accepts the path to the text file and displays the console ten most popular words in this file in descending order of frequency
 
 # Project Goals
 
