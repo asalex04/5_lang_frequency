@@ -2,6 +2,7 @@ import sys
 import re
 import collections
 
+amount_of_words = 10
 
 def load_data(filepath):
     with open(filepath) as text_file:
@@ -11,8 +12,9 @@ def load_data(filepath):
 
 def get_most_frequent_words(text):
     all_matches = re.findall(r'\w+', text)
-    most_frequent_words = collections.Counter(all_matches).most_common(10)
-    return most_frequent_words
+    most_frequent_words = collections.Counter(all_matches)
+    top_ten = most_frequent_words.most_common(amount_of_words)
+    return top_ten
 
 
 def print_words(most_frequent_words):
