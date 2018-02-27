@@ -4,22 +4,22 @@ import collections
 
 
 def load_data(filepath):
-   with open(filepath) as text_file:
-       text = text_file.read().lower()
-       return text
+    with open(filepath) as text_file:
+        text = text_file.read().lower()
+        return text
 
 
 def get_most_frequent_words(text):
-    result = re.findall(r'\w+', text)
-    most_frequent_words = collections.Counter(result).most_common(10)
+    all_matches = re.findall(r'\w+', text)
+    most_frequent_words = collections.Counter(all_matches).most_common(10)
     return most_frequent_words
 
 
 def print_words(most_frequent_words):
     print('Ten most popular words in this text:')
     counter = 1
-    for i in most_frequent_words:
-        print(str(counter) + '. ' + i[0])
+    for word in most_frequent_words:
+        print(str(counter) + '. ' + word[0])
         counter += 1
 
 
