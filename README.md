@@ -13,7 +13,7 @@ Example of script launch on Linux, Python 3.5:
 
 ```bash
 $ python3 lang_frequency.py 1984.txt
-Ten most popular words in this text:
+'Ten most popular words in this text:
 1 the 1371
 2 he 610
 3 a 524
