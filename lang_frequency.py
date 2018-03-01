@@ -19,19 +19,19 @@ def get_most_frequent_words(text):
 
 def print_words(most_frequent_words):
     print('Ten most popular words in this text:')
-    for word, count in enumerate(most_frequent_words, 1):
-        print(word, count)
+    for index,(word, count) in enumerate(most_frequent_words, 1):
+        print(index, word, count)
 
 
 if __name__ == '__main__':
 
     if len(sys.argv) > 1:
-        filepath = format(sys.argv[1])
+        filepath = sys.argv[1]
     else:
-        filepath = input("Put the path to the file: ")
+        print('File not found')
     try:
         text = load_data(filepath)
-    except (FileNotFoundError, ValueError):
+    except (FileNotFoundError):
         exit('Not found correct file')
 
     print_words(get_most_frequent_words(text))
