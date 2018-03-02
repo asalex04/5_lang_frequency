@@ -25,13 +25,10 @@ def print_words(most_frequent_words):
 
 if __name__ == '__main__':
 
-    if len(sys.argv) > 1:
-        filepath = sys.argv[1]
-    else:
-        print('File not found')
     try:
+        filepath = sys.argv[1]
         text = load_data(filepath)
-    except (FileNotFoundError):
+    except (IndexError, FileNotFoundError):
         exit('Not found correct file')
 
     print_words(get_most_frequent_words(text))
